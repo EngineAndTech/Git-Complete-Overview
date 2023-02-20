@@ -25,3 +25,45 @@ This repository is part of git course from @jgsnto. It should be used as referen
 3. Repository Local: This is the local copy of your respository, which contains all the versions of your code that you have been committed. 
 4. Repository Remote: This is the copy of your Git repository that is hosted on a remote serve, such as Github. 
 
+### Basic commands on Git
+- Start one empty repository.
+```
+git init 
+```
+- Add files to staging area.
+```
+git add
+```
+- Create one new commit whith the stagging area files.
+```
+git commit -m 
+```
+- Exihibit the repository status. 
+```
+git status
+```
+- Exihibit the commit history. 
+```
+git log
+```
+- List all the branchs.
+```
+git branch
+```
+- Alows you change branchs or create new one.
+```
+git checkout 
+```
+- Mix two branchs.
+```
+git merge
+```
+- Update the local repository based on the remote repository.
+```
+git pull
+```
+- Send the changes on the local repository for the remote repository.
+```
+git push
+```
+
