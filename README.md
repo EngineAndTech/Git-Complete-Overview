@@ -67,3 +67,46 @@ git pull
 git push
 ```
 
+## Starting with git 
+
+### Configure the user 
+- Username and Email
+
+```
+git config --global user.name "name"
+```
+```
+git config --global user.email "name@example.com"
+```
+
+- List all the configuration
+
+``` 
+git config -l
+``` 
+
+- Set the editor
+
+```
+git config --global core.editor "editor name"
+``` 
+### Working with branches 
+
+- First is important to understand what is a branch. Which is a ramification of the code, what means that you have a copy of the code that you can edit whitou change the code in the master(main) branch. Usually branches are used to develop new features. 
+
+- Create branches
+```
+git checkout -b branch_name
+```
+- Change branches 
+```
+git checkout desired_branch_name
+```
+- List all branches
+```
+git branch
+````
+- Delete branches 
+```
+git branch -D branch_name
+````
