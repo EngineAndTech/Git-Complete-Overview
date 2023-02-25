@@ -110,3 +110,13 @@ git branch
 ```
 git branch -D branch_name
 ````
+
+
+## Advanced Git
+
+### Merge x Rebase
+
+- When you are working with you remote branch and finish the development, it is time to integrate your feature to the master branch. This process can be executed by the comands merge or rebase. But it is important to understand the difference between each one and more important, when use each method.
+- Merge: Merge creates a new commit that combines the changes from one branch to another. When you merge one branch into another, git will create a new commit to be clear that two branches were merged. As advantadge of merge is a better traiceability of changes, and you can have different records of changes. Less changes will be added to the master branch.
+- Merge Fast-Forward: Is a special case from merge, when you have a linear path from master to your changes on parallel branch, then all the commits will be added to the master, getting a linear history. 
+- Rebase: Rebase will recreate the project history, adding all the changes and commits from one branch into the top of another. As advantadge we have the fact that we will always have a linear history and avoid merge conflicts. But the golden rule of rebase is NEVER use in public branchs, because the changes will only happens on your remote copy, so if more peopleo are editing the same project, they can face many problems, when try to push. 
