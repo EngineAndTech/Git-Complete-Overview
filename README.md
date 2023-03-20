@@ -26,70 +26,48 @@ This repository is part of git course from @jgsnto. It should be used as referen
 4. Repository Remote: This is the copy of your Git repository that is hosted on a remote serve, such as Github. 
 
 ### Basic commands on Git
-- Start one empty repository.
+- Initializing a repository 
+``` 
+git init
+``` 
+- Starting files
 ```
-git init 
+git add file1.x #stage single file
+git add *.x #stage file from .x type
+git add . #stage the current directory and all its content 
 ```
-- Add files to staging area.
-```
-git add
-```
-- Create one new commit whith the stagging area files.
-```
-git commit -m 
-```
-- Exihibit the repository status. 
-```
+
+- Viewing the status
+``` 
 git status
-```
-- Exihibit the commit history. 
-```
-git log
-```
-- List all the branchs.
-```
-git branch
-```
-- Alows you change branchs or create new one.
-```
-git checkout 
-```
-- Mix two branchs.
-```
-git merge
-```
-- Update the local repository based on the remote repository.
-```
-git pull
-```
-- Send the changes on the local repository for the remote repository.
-```
-git push
+git status -s
 ```
 
-## Starting with git 
-
-### Configure the user 
-- Username and Email
-
-```
-git config --global user.name "name"
-```
-```
-git config --global user.email "name@example.com"
-```
-
-- List all the configuration
-
+- Committing the staged files
 ``` 
-git config -l
+git commit -m "Message"
 ``` 
 
-- Set the editor
-
+- Removing files 
 ```
-git config --global core.editor "editor name"
+git rm file1.x
+git rm --cache file.x
 ``` 
+
+- Viewing the staged/unstaged changes
+``` 
+git diff    #shows unstaged changes
+git diff --stagged #shows stagged changes 
+git diff --cache #same as the above
+``` 
+
+- Viewing the history
+```
+git log #full history
+git log --online #summary
+git log --reverse #list the commits from the oldest to the newest 
+
+
 ### Working with branches 
 
 - First is important to understand what is a branch. Which is a ramification of the code, what means that you have a copy of the code that you can edit whitou change the code in the master(main) branch. Usually branches are used to develop new features. 
