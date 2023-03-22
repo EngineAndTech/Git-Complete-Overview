@@ -25,6 +25,21 @@ This repository is part of git course from @jgsnto. It should be used as referen
 3. Repository Local: This is the local copy of your respository, which contains all the versions of your code that you have been committed. 
 4. Repository Remote: This is the copy of your Git repository that is hosted on a remote serve, such as Github. 
 
+
+
+### Working with branches 
+
+- First is important to understand what is a branch. Which is a ramification of the code, what means that you have a copy of the code that you can edit whitou change the code in the master(main) branch. Usually branches are used to develop new features. 
+
+## Advanced Git
+
+### Merge x Rebase
+
+- When you are working with you remote branch and finish the development, it is time to integrate your feature to the master branch. This process can be executed by the comands merge or rebase. But it is important to understand the difference between each one and more important, when use each method.
+- Merge: Merge creates a new commit that combines the changes from one branch to another. When you merge one branch into another, git will create a new commit to be clear that two branches were merged. As advantadge of merge is a better traiceability of changes, and you can have different records of changes. Less changes will be added to the master branch.
+- Merge Fast-Forward: Is a special case from merge, when you have a linear path from master to your changes on parallel branch, then all the commits will be added to the master, getting a linear history. 
+- Rebase: Rebase will recreate the project history, adding all the changes and commits from one branch into the top of another. As advantadge we have the fact that we will always have a linear history and avoid merge conflicts. But the golden rule of rebase is NEVER use in public branchs, because the changes will only happens on your remote copy, so if more peopleo are editing the same project, they can face many problems, when try to push. 
+
 ### Basic commands on Git
 - Initializing a repository 
 ``` 
@@ -66,12 +81,34 @@ git diff --cache #same as the above
 git log #full history
 git log --online #summary
 git log --reverse #list the commits from the oldest to the newest 
+```
+- Viewing a commit 
+``` 
+git show commit_id
+git show HEAD #last commit
+git show HEAD ~2 #Two commits before 
+```
 
+- Unstaging files
+```
+git restore --staged file.x #Copies the last version of file.js from repo to index 
+```
+- Discard local changes 
 
-### Working with branches 
+```
+git clean -fd #Removes all untracked files
+```
 
-- First is important to understand what is a branch. Which is a ramification of the code, what means that you have a copy of the code that you can edit whitou change the code in the master(main) branch. Usually branches are used to develop new features. 
+- Viewing the history
+```
+git log --stat #Shows the list of modified files
+git log --patch #Shows the actual changes
+```
 
+- Comparing commits 
+``` 
+git diff HEAD~2 HEAD
+```
 - Create branches
 ```
 git checkout -b branch_name
@@ -83,18 +120,8 @@ git checkout desired_branch_name
 - List all branches
 ```
 git branch
-````
+```
 - Delete branches 
 ```
 git branch -D branch_name
-````
-
-
-## Advanced Git
-
-### Merge x Rebase
-
-- When you are working with you remote branch and finish the development, it is time to integrate your feature to the master branch. This process can be executed by the comands merge or rebase. But it is important to understand the difference between each one and more important, when use each method.
-- Merge: Merge creates a new commit that combines the changes from one branch to another. When you merge one branch into another, git will create a new commit to be clear that two branches were merged. As advantadge of merge is a better traiceability of changes, and you can have different records of changes. Less changes will be added to the master branch.
-- Merge Fast-Forward: Is a special case from merge, when you have a linear path from master to your changes on parallel branch, then all the commits will be added to the master, getting a linear history. 
-- Rebase: Rebase will recreate the project history, adding all the changes and commits from one branch into the top of another. As advantadge we have the fact that we will always have a linear history and avoid merge conflicts. But the golden rule of rebase is NEVER use in public branchs, because the changes will only happens on your remote copy, so if more peopleo are editing the same project, they can face many problems, when try to push. 
+```
